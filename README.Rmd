@@ -29,11 +29,18 @@ The most recent description file that is provided by the SARB has been saved is 
 
 ## Installation
 
+To install the repository the current data from GitLab:
+
+```R
+# install.packages("devtools")
+devtools::install_gitlab("KevinKotze/sarbcurrent")
+```
+
 To install the repository the current data from GitHub:
 
 ```R
 # install.packages("devtools")
-devtools::install_github("KevinKotze/sarb-current")
+devtools::install_github("KevinKotze/sarbcurrent")
 ```
 
 ## Usage
@@ -41,8 +48,8 @@ devtools::install_github("KevinKotze/sarb-current")
 To view all of the data objects that are included in the package: 
 
 ```{r echo=TRUE, eval=FALSE, message=FALSE, warning=FALSE, paged.print=FALSE}
-library(sarb-current)
-data(package = 'sarb-current')
+library(sarbcurrent)
+data(package = 'sarbcurrent')
 ```
 
 
@@ -50,7 +57,7 @@ data(package = 'sarb-current')
 ```{r echo=TRUE, eval=FALSE, message=FALSE, warning=FALSE, paged.print=FALSE}
 library(tidyverse)
 sarb_quarter %>% 
-  select(1:5) %>% 
+  select(date, KBP6006D) %>% 
   tail()
 ```
 
@@ -59,8 +66,13 @@ sarb_quarter %>%
 Historic real-time data vintages, as described in the article by Dean Croushore and Tom Stark (2001), "A Real-Time Data Set for Macroeconomists", _Journal of Econometrics_, vol 105, pp. 111-30, may be accessed in a similar manner. For example, to access the dataset that was released in 2012q2, you should install the following package.
 
 ```R
-# install.packages("devtools")
-devtools::install_github("KevinKotze/sarb-2012-q2")
+devtools::install_gitlab("KevinKotze/sarb2012q2")
+```
+
+or 
+
+```R
+devtools::install_github("KevinKotze/sarb2012q2")
 ```
 
 See <https://www.philadelphiafed.org/research-and-data/real-time-center/real-time-data/> for additional details on the real time dataset that is provided for the United States economy. 

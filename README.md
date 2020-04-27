@@ -3,7 +3,7 @@
 
 ## SARB Quarterly Bulletin Data
 
-*\<last updated on 2020-04-26\>*
+*\<last updated on 2020-04-27\>*
 
 This R package provides convenient access to the data that accompanies
 the South African Reserve Bank Quarterly Bulletin. Variables that are of
@@ -31,11 +31,18 @@ this data is provided.
 
 ## Installation
 
+To install the repository the current data from GitLab:
+
+``` r
+# install.packages("devtools")
+devtools::install_gitlab("KevinKotze/sarbcurrent")
+```
+
 To install the repository the current data from GitHub:
 
 ``` r
 # install.packages("devtools")
-devtools::install_github("KevinKotze/sarb-current")
+devtools::install_github("KevinKotze/sarbcurrent")
 ```
 
 ## Usage
@@ -43,14 +50,14 @@ devtools::install_github("KevinKotze/sarb-current")
 To view all of the data objects that are included in the package:
 
 ``` r
-library(sarb-current)
-data(package = 'sarb-current')
+library(sarbcurrent)
+data(package = 'sarbcurrent')
 ```
 
 ``` r
 library(tidyverse)
 sarb_quarter %>% 
-  select(1:5) %>% 
+  select(date, KBP6006D) %>% 
   tail()
 ```
 
@@ -63,8 +70,13 @@ accessed in a similar manner. For example, to access the dataset that
 was released in 2012q2, you should install the following package.
 
 ``` r
-# install.packages("devtools")
-devtools::install_github("KevinKotze/sarb-2012-q2")
+devtools::install_gitlab("KevinKotze/sarb2012q2")
+```
+
+or
+
+``` r
+devtools::install_github("KevinKotze/sarb2012q2")
 ```
 
 See
